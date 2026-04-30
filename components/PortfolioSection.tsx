@@ -54,17 +54,17 @@ const portfolioData = {
     {
       title: "Brand Logo Identity",
       category: "Logo Design",
-      image: "/images/logos/ms.jpg",
+      image: "/images/Logos/ms.jpg",
     },
     {
       title: "Brand Logo Identity",
       category: "Logo Design",
-      image: "/images/logos/ms_2.jpg",
+      image: "/images/Logos/ms_2.jpg",
     },
     {
       title: "Brand Logo Identity",
       category: "Logo Design",
-      image: "/images/logos/r_logo.jpg",
+      image: "/images/Logos/r_logo.jpg",
     },
   ],
 

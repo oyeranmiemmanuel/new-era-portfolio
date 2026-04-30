@@ -105,32 +105,32 @@ const portfolioData = {
     {
       title: "Corporate Logo Identity",
       category: "Logo Design",
-      image: "/images/logos/bs_logo.jpg",
+      image: "/images/Logos/bs_logo.jpg",
     },
     {
       title: "Brand Logo Identitiy",
       category: "Logo Design",
-      image: "/images/logos/bm.jpg",
+      image: "/images/Logos/bm.jpg",
     },
     {
       title: "Brand Logo Identity",
       category: "Logo Design",
-      image: "/images/logos/ms.jpg",
+      image: "/images/Logos/ms.jpg",
     },
     {
       title: "Brand Logo Identity",
       category: "Logo Design",
-      image: "/images/logos/ms_2.jpg",
+      image: "/images/Logos/ms_2.jpg",
     },
     {
       title: "Brand Logo Identity",
       category: "Logo Design",
-      image: "/images/logos/r_logo.jpg",
+      image: "/images/Logos/r_logo.jpg",
     },
     {
       title: "Corporate Logo Identity",
       category: "Logo Design",
-      image: "/images/logos/yn_logo.jpg",
+      image: "/images/Logos/yn_logo.jpg",
     },
   ],
 

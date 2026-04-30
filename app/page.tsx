@@ -26,9 +26,6 @@ export default function Home() {
       <div className="reveal">
         <PortfolioSection />
       </div>
-      <div className="reveal">
-        <PortfolioSection />
-      </div>
         <div className="reveal">
         <TestimonialsSection />
         </div>
