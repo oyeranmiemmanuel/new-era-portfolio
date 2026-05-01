@@ -3,8 +3,31 @@ import "./globals.css";
 export const metadata = {
   title: "New Era",
   description: "Premium Branding Studio",
-};
 
+  openGraph: {
+    title: "New Era",
+    description: "Premium Branding Studio",
+    url: "https://derabrand.online",
+    siteName: "New Era",
+    images: [
+      {
+        url: "/NE-logo.jpg",
+        width: 1200,
+        height: 630,
+        alt: "New Era Branding",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "New Era",
+    description: "Premium Branding Studio",
+    images: ["/og-image.jpg"],
+  },
+};
 export default function RootLayout({
   children,
 }: {
