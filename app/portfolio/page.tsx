@@ -196,11 +196,11 @@ export default function PortfolioPage() {
       {/* Header */}
       <div className="text-center mb-12">
         <h1 className="text-5xl font-bold mb-4">
-          My <span className="text-purple-400">Portfolio</span>
+          Our <span className="text-purple-400">Portfolio</span>
         </h1>
 
         <p className="text-gray-400 max-w-2xl mx-auto">
-          Explore my creative works across different categories of design.
+          Explore our creative works across different categories of design.
         </p>
       </div>
 

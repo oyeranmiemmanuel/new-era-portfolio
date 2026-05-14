@@ -9,20 +9,25 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import FloatingWhatsapp from "@/components/FloatingWhatsapp";
+import MyComponent from "./Slider";
+import Slider from "./Slider";
 
 export default function Home() {
   useScrollReveal();
   return (
-    <main className="bg-black min-h-screen text-white">
-      <Navbar />
-
-      <div className="pt-24">
+    <main className="mt-[-25px] bg-black min-h-screen text-white">
+    <Navbar />
+    <div className="back-ground">
+    <div className="pt-24 ">
         <div className="reveal"> 
+      <Slider />
         <HeroSection />
         </div>
       <div className="reveal">
         <ServicesSection />
       </div> 
+    </div>
+  
       <div className="reveal">
         <PortfolioSection />
       </div>

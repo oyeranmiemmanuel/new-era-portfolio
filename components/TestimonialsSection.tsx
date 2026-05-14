@@ -1,18 +1,18 @@
 export default function TestimonialsSection() {
   const testimonials = [
     {
-      name: "Michael A.",
-      role: "Business Owner",
+      name: "BASSLUXE",
+      role: "Brand Owner",
       text: "New Era transformed our brand identity completely. The design quality was premium and highly professional.",
     },
     {
-      name: "Sarah K.",
-      role: "Startup Founder",
+      name: "MBK (My Brother's Keeper)",
+      role: "Branding and Clothing ",
       text: "Their flyer and social media designs increased our engagement massively. Excellent delivery and creativity.",
     },
     {
-      name: "Daniel T.",
-      role: "Brand Manager",
+      name: "Bramond",
+      role: "Artist and Branding",
       text: "Clean, modern, and powerful visuals. Working with New Era was one of our best branding decisions.",
     },
   ];

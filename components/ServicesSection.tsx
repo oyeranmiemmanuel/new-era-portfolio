@@ -23,7 +23,7 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="bg-black text-white py-24 px-6">
+    <section className="bg-transparent text-white py-24 px-6">
       <div className="max-w-7xl mx-auto">
 
         <div className="text-center mb-16">

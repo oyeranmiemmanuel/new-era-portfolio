@@ -1,20 +1,39 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "New Era",
-  description: "Premium Branding Studio",
+  metadataBase: new URL("https://derabrand.online"),
+
+  title: {
+    default: "New Era | Premium Branding & Design",
+    template: "%s | New Era",
+  },
+
+  description:
+    "New Era is a premium branding studio specializing in logo design, flyer design, brand identity, and social media creatives that convert.",
+
+  keywords: [
+    "branding design",
+    "logo design Nigeria",
+    "flyer design",
+    "graphic design Lagos",
+    "brand identity",
+    "social media design",
+  ],
+
+  authors: [{ name: "New Era" }],
 
   openGraph: {
-    title: "New Era",
-    description: "Premium Branding Studio",
+    title: "New Era | Premium Branding Studio",
+    description:
+      "Premium branding, logo design, flyers, and social media creatives that help your business stand out.",
     url: "https://derabrand.online",
     siteName: "New Era",
     images: [
       {
-        url: "/NE-logo.jpg",
+        url: "https://derabrand.online/NE-logo.jpg",
         width: 1200,
         height: 630,
-        alt: "New Era Branding",
+        alt: "New Era Branding Studio",
       },
     ],
     locale: "en_US",
@@ -23,11 +42,18 @@ export const metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "New Era",
-    description: "Premium Branding Studio",
-    images: ["/og-image.jpg"],
+    title: "New Era Branding",
+    description:
+      "Premium branding, logo design, flyers, and social media creatives.",
+    images: ["https://derabrand.online/NE-logo.jpg"],
+  },
+
+  icons: {
+    icon: "/icon.png",
   },
 };
+
+
 export default function RootLayout({
   children,
 }: {

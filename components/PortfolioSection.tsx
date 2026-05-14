@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const portfolioData = {
   branding: [
     {
@@ -115,9 +117,11 @@ function PortfolioCategory({
             className="group border border-purple-500/20 rounded-2xl overflow-hidden bg-gradient-to-b from-purple-900/10 to-black hover:border-purple-400 transition"
           >
             <div className="overflow-hidden">
-              <img
+              <Image
                 src={item.image}
                 alt={item.title}
+                width={1200}
+                height={800}
                 className="w-full h-72 object-cover group-hover:scale-105 transition duration-500"
               />
             </div>

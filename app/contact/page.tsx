@@ -98,7 +98,7 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-bold text-lg">Instagram</h3>
                   <p className="text-gray-400">
-                    @newera.designs
+                    @thenew_era_tech
                   </p>
                 </div>
               </div>
