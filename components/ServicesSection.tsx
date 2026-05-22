@@ -1,9 +1,9 @@
 export default function ServicesSection() {
   const services = [
     {
-      title: "Logo Design",
+      title: "AI & Website Development",
       description:
-        "Memorable and premium logo identities built to make brands instantly recognizable.",
+        "Modern AI-powered websites and intelligent web applications built for performance, automation, and seamless user experiences.",
     },
     {
       title: "Flyer Design",
@@ -11,14 +11,14 @@ export default function ServicesSection() {
         "Professional flyers for events, promotions, businesses, and high-converting campaigns.",
     },
     {
-      title: "Social Media Design",
+      title: "AI Chatbots & Automation",
       description:
-        "Modern social creatives designed to boost engagement and strengthen brand presence.",
+        "Smart AI chatbots and automated systems designed to streamline workflows, improve customer engagement, and boost business efficiency.",
     },
     {
       title: "Brand Identity",
       description:
-        "Complete branding systems including colors, typography, style direction, and consistency.",
+        "Complete branding systems including logos, colors, typography, style direction, and consistency.",
     },
   ];
 

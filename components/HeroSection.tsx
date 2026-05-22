@@ -53,7 +53,7 @@ export default function HeroSection() {
           rel="noopener noreferrer"
           className="px-8 py-4 rounded-xl border border-purple-400 text-purple-300 hover:bg-purple-500/10 transition"
         >
-          WhatsApp Me
+          WhatsApp
         </a>
       </div>
     </div>

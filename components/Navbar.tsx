@@ -69,7 +69,7 @@ export default function Navbar() {
           rel="noopener noreferrer"
           className="hidden md:inline-block px-5 py-2 rounded-xl bg-purple-500 text-white font-semibold hover:bg-purple-600 hover:scale-105 transition"
         >
-          Hire Me
+          Get in Touch
         </a>
 
         {/* Mobile Button */}

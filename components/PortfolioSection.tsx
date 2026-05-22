@@ -99,19 +99,21 @@ function PortfolioCategory({
     category: string;
     image: string;
   }[];
-}) {
+}
+){
+  console.log("PortfolioCategory mounted:", title);
   return (
-    <section className="mb-24">
-      <div className="mb-10">
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
-          {title}
-        </h2>
+<section className="mb-5">
 
-        <div className="w-24 h-1 bg-purple-500 rounded-full"></div>
-      </div>
+    <div className="mb-5">
+      <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
+        {title}
+      </h2>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {items.map((item, index) => (
+      <div className="w-24 h-1 bg-purple-500 rounded-full"></div>
+
+</div>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">        {items.map((item, index) => (
           <div
             key={index}
             className="group border border-purple-500/20 rounded-2xl overflow-hidden bg-gradient-to-b from-purple-900/10 to-black hover:border-purple-400 transition"
@@ -123,6 +125,7 @@ function PortfolioCategory({
                 width={1200}
                 height={800}
                 className="w-full h-72 object-cover group-hover:scale-105 transition duration-500"
+                unoptimized
               />
             </div>
 
@@ -153,7 +156,7 @@ function PortfolioCategory({
 
 export default function PortfolioSection() {
   return (
-    <section className="bg-black text-white py-24 px-6">
+    <section className="bg-black text-white py-24 px-6 sm:flex">
       <div className="max-w-7xl mx-auto">
 
         <div className="text-center mb-16">
@@ -170,11 +173,11 @@ export default function PortfolioSection() {
             drive engagement, and create unforgettable first impressions.
           </p>
         </div>
-
         <PortfolioCategory
           title="Brand Design"
           items={portfolioData.branding}
         />
+{/* 
 
         <PortfolioCategory
           title="Flyer Design"
@@ -189,7 +192,7 @@ export default function PortfolioSection() {
         <PortfolioCategory
           title="Social Media Design"
           items={portfolioData.socialMedia}
-        />
+        /> */}
 
       </div>
     </section>
