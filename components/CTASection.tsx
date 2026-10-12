@@ -1,3 +1,5 @@
+import { defaultWhatsappMessage, whatsappLink } from "@/lib/site";
+
 export default function CTASection() {
   return (
     <section className="bg-black text-white py-24 px-6">
@@ -18,10 +20,10 @@ export default function CTASection() {
         </p>
 
         <a
-          href="https://wa.me/2348153626747?text=Hello%20I%20want%20to%20work%20with%20New%20Era"
+          href={whatsappLink(defaultWhatsappMessage)}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block px-10 py-4 rounded-xl bg-purple-500 font-bold text-white hover:scale-105 transition"
+          className="inline-block px-10 py-4 rounded-xl bg-purple-500 font-bold text-white hover:scale-105 transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-300"
         >
           Start Your Project
         </a>

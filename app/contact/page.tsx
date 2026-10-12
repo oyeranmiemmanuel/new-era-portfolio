@@ -1,5 +1,42 @@
+import type { ReactNode } from "react";
 import Navbar from "@/components/Navbar";
 import { FaWhatsapp, FaEnvelope, FaInstagram } from "react-icons/fa";
+import {
+  defaultWhatsappMessage,
+  instagramUrl,
+  siteConfig,
+  whatsappLink,
+} from "@/lib/site";
+
+function ContactCard({
+  icon,
+  title,
+  value,
+  href,
+  external = false,
+}: {
+  icon: ReactNode;
+  title: string;
+  value: string;
+  href: string;
+  external?: boolean;
+}) {
+  return (
+    <a
+      href={href}
+      {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+      className="block border border-purple-500/20 rounded-2xl p-6 hover:border-purple-400 transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-300"
+    >
+      <div className="flex items-center gap-4">
+        {icon}
+        <div>
+          <h3 className="font-bold text-lg">{title}</h3>
+          <p className="text-gray-400">{value}</p>
+        </div>
+      </div>
+    </a>
+  );
+}
 
 export default function ContactPage() {
   return (
@@ -42,10 +79,10 @@ export default function ContactPage() {
               </p>
 
               <a
-                href="https://wa.me/2348153626747?text=Hello%20I%20want%20to%20work%20with%20New%20Era"
+                href={whatsappLink(defaultWhatsappMessage)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-purple-500 font-bold text-white hover:scale-105 transition"
+                className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-purple-500 font-bold text-white hover:scale-105 transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-300"
               >
                 <FaWhatsapp />
                 Chat on WhatsApp
@@ -68,41 +105,32 @@ export default function ContactPage() {
           {/* Right Side */}
           <div className="space-y-6">
 
-            <div className="border border-purple-500/20 rounded-2xl p-6 hover:border-purple-400 transition">
-              <div className="flex items-center gap-4">
-                <FaWhatsapp className="text-2xl text-purple-400" />
-                <div>
-                  <h3 className="font-bold text-lg">WhatsApp</h3>
-                  <p className="text-gray-400">
-                    +234 815 362 6747
-                  </p>
-                </div>
-              </div>
-            </div>
+            <ContactCard
+              icon={<FaWhatsapp className="text-2xl text-purple-400" />}
+              title="WhatsApp"
+              value={siteConfig.phoneDisplay}
+              href={whatsappLink()}
+              external
+            />
 
-            <div className="border border-purple-500/20 rounded-2xl p-6 hover:border-purple-400 transition">
-              <div className="flex items-center gap-4">
-                <FaEnvelope className="text-2xl text-purple-400" />
-                <div>
-                  <h3 className="font-bold text-lg">Email</h3>
-                  <p className="text-gray-400">
-                    oyeranmie@email.com
-                  </p>
-                </div>
-              </div>
-            </div>
+            {siteConfig.email && (
+              <ContactCard
+                icon={<FaEnvelope className="text-2xl text-purple-400" />}
+                title="Email"
+                value={siteConfig.email}
+                href={`mailto:${siteConfig.email}`}
+              />
+            )}
 
-            <div className="border border-purple-500/20 rounded-2xl p-6 hover:border-purple-400 transition">
-              <div className="flex items-center gap-4">
-                <FaInstagram className="text-2xl text-purple-400" />
-                <div>
-                  <h3 className="font-bold text-lg">Instagram</h3>
-                  <p className="text-gray-400">
-                    @thenew_era_tech
-                  </p>
-                </div>
-              </div>
-            </div>
+            {siteConfig.instagramHandle && (
+              <ContactCard
+                icon={<FaInstagram className="text-2xl text-purple-400" />}
+                title="Instagram"
+                value={`@${siteConfig.instagramHandle}`}
+                href={instagramUrl()}
+                external
+              />
+            )}
 
             <div className="border border-purple-500/20 rounded-2xl p-8 bg-gradient-to-br from-purple-900/10 to-black">
               <h3 className="text-2xl font-bold mb-4">

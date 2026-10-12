@@ -3,21 +3,32 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { hasProjects } from "@/data/projects";
+import { whatsappLink } from "@/lib/site";
+
+const navLinks = [
+  { href: "/", label: "Home" },
+  // The Projects link only appears once you have added at least one project.
+  ...(hasProjects ? [{ href: "/projects", label: "Projects" }] : []),
+  { href: "/portfolio", label: "Portfolio" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
+];
 
 export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
-  const isActive = (path: string) => pathname === path;
+  // "/" must match exactly; other links also stay active on sub-pages (e.g. /projects/my-shop).
+  const isActive = (path: string) =>
+    path === "/" ? pathname === "/" : pathname === path || pathname.startsWith(`${path}/`);
 
   const linkBase =
-    "relative px-3 py-2 text-sm font-medium transition-all duration-200";
+    "relative px-3 py-2 text-sm font-medium transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-300";
 
   const linkStyle = (path: string) =>
     `${linkBase} ${
-      isActive(path)
-        ? "text-purple-400"
-        : "text-gray-300 hover:text-white"
+      isActive(path) ? "text-purple-400" : "text-gray-300 hover:text-white"
     }`;
 
   return (
@@ -31,40 +42,24 @@ export default function Navbar() {
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-10">
-
-          <Link href="/" className={linkStyle("/")}>
-            Home
-            {isActive("/") && (
-              <span className="absolute left-0 -bottom-1 w-full h-[2px] bg-purple-500 rounded-full" />
-            )}
-          </Link>
-
-          <Link href="/portfolio" className={linkStyle("/portfolio")}>
-            Portfolio
-            {isActive("/portfolio") && (
-              <span className="absolute left-0 -bottom-1 w-full h-[2px] bg-purple-500 rounded-full" />
-            )}
-          </Link>
-
-          <Link href="/about" className={linkStyle("/about")}>
-            About
-            {isActive("/about") && (
-              <span className="absolute left-0 -bottom-1 w-full h-[2px] bg-purple-500 rounded-full" />
-            )}
-          </Link>
-
-          <Link href="/contact" className={linkStyle("/contact")}>
-            Contact
-            {isActive("/contact") && (
-              <span className="absolute left-0 -bottom-1 w-full h-[2px] bg-purple-500 rounded-full" />
-            )}
-          </Link>
-
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              aria-current={isActive(link.href) ? "page" : undefined}
+              className={linkStyle(link.href)}
+            >
+              {link.label}
+              {isActive(link.href) && (
+                <span className="absolute left-0 -bottom-1 w-full h-[2px] bg-purple-500 rounded-full" />
+              )}
+            </Link>
+          ))}
         </div>
 
         {/* CTA */}
         <a
-          href="https://wa.me/2348153626747?text=Hello%20New%20Era"
+          href={whatsappLink("Hello New Era")}
           target="_blank"
           rel="noopener noreferrer"
           className="hidden md:inline-block px-5 py-2 rounded-xl bg-purple-500 text-white font-semibold hover:bg-purple-600 hover:scale-105 transition"
@@ -74,58 +69,48 @@ export default function Navbar() {
 
         {/* Mobile Button */}
         <button
+          type="button"
           onClick={() => setOpen(!open)}
-          className="md:hidden text-white text-2xl"
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          aria-controls="mobile-menu"
+          className="md:hidden text-white text-2xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-300"
         >
-          ☰
+          {open ? "✕" : "☰"}
         </button>
 
       </div>
 
       {/* Mobile Menu */}
       {open && (
-        <div className="md:hidden bg-black border-t border-purple-500/20 px-6 py-6 space-y-5 text-sm">
-
-          <Link
-            href="/"
-            onClick={() => setOpen(false)}
-            className="block text-gray-300 hover:text-white"
-          >
-            Home
-          </Link>
-
-          <Link
-            href="/portfolio"
-            onClick={() => setOpen(false)}
-            className="block text-gray-300 hover:text-white"
-          >
-            Portfolio
-          </Link>
-
-          <Link
-            href="/about"
-            onClick={() => setOpen(false)}
-            className="block text-gray-300 hover:text-white"
-          >
-            About
-          </Link>
-
-          <Link
-            href="/contact"
-            onClick={() => setOpen(false)}
-            className="block text-gray-300 hover:text-white"
-          >
-            Contact
-          </Link>
+        <div
+          id="mobile-menu"
+          className="md:hidden bg-black border-t border-purple-500/20 px-6 py-6 space-y-5 text-sm"
+        >
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={() => setOpen(false)}
+              aria-current={isActive(link.href) ? "page" : undefined}
+              className={`block ${
+                isActive(link.href)
+                  ? "text-purple-400"
+                  : "text-gray-300 hover:text-white"
+              }`}
+            >
+              {link.label}
+            </Link>
+          ))}
 
           <a
-            href="https://wa.me/2348153626747"
+            href={whatsappLink()}
             target="_blank"
+            rel="noopener noreferrer"
             className="block mt-4 px-5 py-3 rounded-xl bg-purple-500 text-white font-semibold text-center hover:bg-purple-600 transition"
           >
             Hire Me
           </a>
-
         </div>
       )}
     </nav>

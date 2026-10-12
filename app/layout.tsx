@@ -1,7 +1,9 @@
+import type { Metadata } from "next";
+import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
-export const metadata = {
-  metadataBase: new URL("https://derabrand.online"),
+export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
 
   title: {
     default: "New Era | Premium Branding & Design",
@@ -26,13 +28,13 @@ export const metadata = {
     title: "New Era | Premium Branding Studio",
     description:
       "Premium branding, logo design, flyers, and social media creatives that help your business stand out.",
-    url: "https://derabrand.online",
+    url: siteConfig.url,
     siteName: "New Era",
     images: [
       {
-        url: "https://derabrand.online/NE-logo.jpg",
-        width: 1200,
-        height: 630,
+        url: "/NE-logo.jpg",
+        width: 580,
+        height: 386,
         alt: "New Era Branding Studio",
       },
     ],
@@ -45,7 +47,7 @@ export const metadata = {
     title: "New Era Branding",
     description:
       "Premium branding, logo design, flyers, and social media creatives.",
-    images: ["https://derabrand.online/NE-logo.jpg"],
+    images: ["/NE-logo.jpg"],
   },
 
   icons: {

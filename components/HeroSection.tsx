@@ -1,3 +1,6 @@
+import Link from "next/link";
+import { whatsappLink } from "@/lib/site";
+
 export default function HeroSection() {
   return (
 <section className="relative min-h-screen overflow-hidden text-white flex items-center justify-center px-6">
@@ -40,15 +43,15 @@ export default function HeroSection() {
       </p>
 
       <div className="flex gap-4 flex-wrap">
-        <a
+        <Link
           href="/portfolio"
           className="px-8 py-4 rounded-xl bg-purple-500 hover:bg-purple-600 transition font-semibold"
         >
           View Portfolio
-        </a>
+        </Link>
 
         <a
-          href="https://wa.me/2348153626747"
+          href={whatsappLink()}
           target="_blank"
           rel="noopener noreferrer"
           className="px-8 py-4 rounded-xl border border-purple-400 text-purple-300 hover:bg-purple-500/10 transition"
