@@ -195,6 +195,8 @@ const projects: Project[] = [
       "Implemented a workflow combining extension inspection, automatic classification, and custom folder rules.",
       "Added file-operation tracking and recovery features to support safer organization.",
     ],
+    
+  },
   download: {
      url: "/downloads/software/smartFileOrganizer.exe",
      label: "Download for Windows",
