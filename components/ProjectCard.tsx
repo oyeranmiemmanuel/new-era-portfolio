@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { statusLabels } from "@/data/projects";
 import type { Project, ProjectStatus } from "@/data/projects";
+import ProjectDownloadButton from "@/components/projects/ProjectDownloadButton";
+import { hasProjectDownload } from "@/lib/software-download";
 
 const statusStyles: Record<ProjectStatus, string> = {
   live: "border-emerald-400/40 bg-emerald-500/15 text-emerald-300",
@@ -66,7 +68,7 @@ export function ProjectActions({
   const secondary = `inline-block rounded-xl border border-purple-400/60 px-5 py-2.5 text-sm font-semibold text-purple-200 transition hover:bg-purple-500/10 ${focusRing}`;
 
   return (
-    <div className="flex flex-wrap gap-3">
+    <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
       {project.liveUrl && (
         <a
           href={project.liveUrl}
@@ -100,6 +102,9 @@ export function ProjectActions({
           Details
         </Link>
       )}
+
+
+       <ProjectDownloadButton project={project} />
     </div>
   );
 }

@@ -134,6 +134,79 @@ const projects: Project[] = [
 },
 
 
+
+
+{
+  slug: "smart-file-organizer",
+  name: "Smart File Organizer",
+  summary:
+    "A Windows desktop application that simplifies file management by scanning directories, identifying file types, and organizing files into meaningful folders. It combines automatic classification with user-defined extension rules, preview-before-moving, undo functionality, and activity logging.",
+  category: "Software",
+  technologies: [
+    "Python",
+    "CustomTkinter",
+    "Tkinter",
+    "Pathlib",
+    "Shutil",
+    "CSV",
+    "Threading",
+    "PyInstaller",
+  ],
+  status: "completed",
+  featured: true,
+  image: "/images/Projects/smart-file-organizer.png",
+  imageAlt:
+    "Smart File Organizer Windows desktop application showing directory scanning and file organization controls",
+  githubUrl:
+    "https://github.com/oyeranmiemmanuel/SmartFileOrganizer",
+
+  problem:
+    "Manually sorting files across downloads, work folders, and personal directories is repetitive and time-consuming. Files with uncommon extensions can also be overlooked or incorrectly classified by basic organizers. Smart File Organizer provides a graphical workflow for inspecting files, choosing organization rules, and managing file moves with greater control.",
+
+  description:
+    "Smart File Organizer is a Python-based Windows desktop utility designed to make file organization faster, clearer, and safer. Its graphical interface allows users to select a directory, inspect detected file extensions, and determine how files should be grouped before moving them.\n\nThe application combines automatic file classification with customizable extension-to-folder mappings. Users can define their own destination folder names for particular extensions or rely on the application's classification rules for supported file types.\n\nSafety and traceability are important parts of the workflow. The application supports previewing files before organization, undoing supported file moves, and recording file operations in CSV activity logs. Threading helps keep longer scanning and organization operations from making the interface unresponsive.\n\nThe project is packaged as a Windows executable, making the application accessible without requiring users to run the Python source code manually.",
+
+  caseStudy: {
+    role:
+      "Designed, developed, tested, and packaged a Python desktop application for Windows file organization.",
+    highlights: [
+      "Graphical desktop interface built with CustomTkinter.",
+      "Directory scanning to inspect available file extensions before organizing.",
+      "Automatic file classification based on supported file types.",
+      "Custom extension-to-folder mapping so users can control destination folder names.",
+      "Improved handling of uncommon image extensions, including JFIF.",
+      "Preview-first workflow to review detected files before moving them.",
+      "Undo functionality for supported file moves.",
+      "CSV activity logging to maintain a record of file operations.",
+      "Background threading to keep the interface responsive during longer tasks.",
+      "Standalone Windows executable packaging with PyInstaller.",
+      "Windows batch launcher and Python fallback for source-based execution.",
+    ],
+    challenges: [
+      "Handling different file extensions reliably instead of relying only on broad file categories.",
+      "Allowing users to customize folder destinations without losing automatic classification.",
+      "Designing a workflow that lets users inspect files before changes are made.",
+      "Supporting recoverable file operations and recording activity for greater transparency.",
+      "Packaging the application for Windows while retaining a source-code launch option.",
+    ],
+    results: [
+      "Produced a Windows executable build of the desktop application.",
+      "Created a graphical alternative to manually organizing files through File Explorer.",
+      "Implemented a workflow combining extension inspection, automatic classification, and custom folder rules.",
+      "Added file-operation tracking and recovery features to support safer organization.",
+    ],
+  },
+  download: {
+     url: "/downloads/software/SmartFileOrganizer.exe",
+     label: "Download for Windows",
+     fileName: "SmartFileOrganizer.exe",
+     platform: "windows",
+     version: "5.0.0",
+   },
+},
+
+
+
 ];
 
 // ---------------------------------------------------------------------
